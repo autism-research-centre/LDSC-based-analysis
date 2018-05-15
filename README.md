@@ -30,13 +30,16 @@ data$Finalcolumnname = ifelse(data$SNP %in% Module$'variant name', 1, 0)
 write.table(data, file = paste0("path to directory", i, ".annot"), row.names = F, col.names = T, quote = F)}
 ```
 
-### Step 3:
+### Step 3: Create the files
 Next, create the files for LDPred
 
 ```bash
-for i in {1..22}; do python2 ldsc.py --l2 --bfile 1000G.mac5eur.${i} --ld-wind-cm 1 --annot GTexmagenta.${i}.annot --out GTexmagenta.${i} --print-snps hm.$i{i}.snp; done
+for i in {1..22}; do python2 ldsc.py --l2 --bfile 1000G.mac5eur.${i} --ld-wind-cm 1 --annot GTexmagenta.${i}.annot --out GTexmagenta.${i} --print-snps hm.${i}.snp; done
 
 ```
 
+### Step 4: Run partitioned heritability
 
+```bash
 
+```
